@@ -8,14 +8,12 @@
 	<h1>Result</h1>
 	<p
 		th:text="${greeting.year}+' holidays for '+ ${greeting.country} +' are :'" />
-	<p th:text="${holidaylist}" />
+	<th:block th:each="g : ${holidaylist}">
+		<p th:text="${g.getDate()}">...</p>
+	</th:block>
+	<h2>Reminder</h2>
 	<p th:text="'New York Stock Exchange days :' +${nyse}" />
 	<p th:text="'Target days : '+ ${target}" />
 	<a href="/greeting">Submit another year and country</a>
-
-	<th:block th:each="g : ${nyse}">
-		<p th:text="${g.getDate()}">...</p>
-
-	</th:block>
 </body>
 </html>

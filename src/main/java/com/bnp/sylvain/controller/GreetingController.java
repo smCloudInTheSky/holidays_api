@@ -30,8 +30,6 @@ public class GreetingController {
 
 	@PostMapping("/greeting")
 	public String greetingSubmit(@ModelAttribute Greeting greeting, Model model) {
-		// URL target = new
-		// URL("gs-serving-web-content-complete/src/Holidays/Holidays_target.xml");
 		HolidayManager target = HolidayManager.getInstance("target");
 		Set<Holiday> targetdays = target.getHolidays(Integer.parseInt(greeting.getYear()));
 		HolidayManager test = HolidayManager.getInstance(HolidayCalendar.valueOf(greeting.getCountry()).getId());
@@ -41,10 +39,6 @@ public class GreetingController {
 		HolidayManager nyse = HolidayManager.getInstance(HolidayCalendar.NYSE);
 		Set<Holiday> nysedays = nyse.getHolidays(Integer.parseInt(greeting.getYear()));
 		model.addAttribute("nyse", nysedays);
-
-		// GreetingService service = new GreetingServiceImpl();
-		// Greeting g = service.getTheLastGreeting();
-		// model.addAllAttributes(g.getMap());
 		return "result";
 	}
 
@@ -56,6 +50,5 @@ public class GreetingController {
 			countryList.add(listcountry[i].toString());
 		}
 		return countryList;
-
 	}
 }
