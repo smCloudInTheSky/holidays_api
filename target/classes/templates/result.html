@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Result of the form</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+	<p
+		th:text="${greeting.year}+' holidays for '+ ${greeting.country} +' are :'" />
+	<th:block th:each="g : ${holidaylist}">
+		<p th:text="${g.getDate()}">...</p>
+	</th:block>
+	<h2>Reminder</h2>
+	<p th:text="'New York Stock Exchange days :' +${nyse}" />
+	<p th:text="'Target days : '+ ${target}" />
+	<a href="/greeting">Submit another year and country</a>
+</body>
+</html>

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.bnp.sylvain.dao.GreetingDAO;
 import com.bnp.sylvain.model.Greeting;
 
 import de.jollyday.Holiday;
@@ -20,7 +19,6 @@ import de.jollyday.HolidayManager;
 @Controller
 public class GreetingController {
 	
-	GreetingDAO dao;
 	
 	@GetMapping("/greeting")
 	public String greetingForm(Model model) {
