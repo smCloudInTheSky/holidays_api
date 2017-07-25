@@ -1,10 +1,21 @@
 package com.bnp.sylvain.model;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 import de.jollyday.HolidayCalendar;
 
 public class Greeting {
-    private String year; 
+	
+	@NotEmpty
+	@NotNull
+    private String year;
+    
+    @NotEmpty
     private String country;
+    
+    
     public String getYear(){
     	return this.year;
     }
